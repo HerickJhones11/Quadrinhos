@@ -6,7 +6,7 @@ import Autocomplete from 'react-autocomplete';
 class SearchChar extends Component {
     render() {
         return (
-            <React.Fragment>
+            <React.Fragment >
                 <Autocomplete
                     items={this.props.chars}
                     inputProps={{ id: 'states-autocomplete' }}

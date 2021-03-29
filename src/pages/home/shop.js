@@ -34,7 +34,11 @@ class Home extends Component {
   }
 
   onButtonClick() {
-    console.log('teste')
+    console.log(cont);
+    if (cont == 1){
+      this.props.findComics('1009610');
+      cont++
+    }
     
   }
 
@@ -51,47 +55,28 @@ class Home extends Component {
   render() {
     return (
       <main>
-        <nav class="navbar navbar-expand-lg navbar-light" style={{backgroundColor:'#E62429'}}>
-  <a class="navbar-brand" href="#" style={{color:'white'}}>Api da Marvel</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/carrinho" style={{color:'white'}}>Carrinho </a>
-      </li>
-   
-    </ul>
- 
-  </div>
-</nav>
-        <div className="container" style={{marginLeft:'-1%'}}>
-          <SearchChar 
+        <div className="container">
+          <SearchChar
             char={this.props.chars}
             search={this.state.search}
             autoCompleteOnChange={this.autoCompleteOnChange}
             onSelectItem={this.onSelectItem}
-
           />
           <div className="content">
             {this.props.comics ?
-              <section  className="wrapper-comics">
+              <section className="wrapper-comics">
                 {
                   this.props.comics.map(item =>
-                    <React.Fragment key={item.id} >
-                      <ComicThumbnail 
+                    <React.Fragment key={item.id}>
+                      <ComicThumbnail
+                        url={item.urls[0].url}
                         title={item.title}
                         thumbnail={item.thumbnail.path + '.' + item.thumbnail.extension}
-                        price={item.prices[0].price}
                       >
                       </ComicThumbnail>
                     </React.Fragment>
                   )
-
                 }
-                
               </section>
               :
               <section className="wrapper-call">
@@ -99,7 +84,6 @@ class Home extends Component {
             }
           </div>
         </div>
-        
       </main >
 
     );

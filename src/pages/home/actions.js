@@ -39,6 +39,7 @@ export const findComics = (char) => {
                             type: ON_MARVEL_CHAR_CHANGED,
                             payload: result.data.data.results
                         });
+                        console.log(result.data.data.results)
                     }
                 })
                 .catch((error) => {

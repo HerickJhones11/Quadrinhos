@@ -15,10 +15,10 @@ html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe
     to{transform:scaleX(5) translateX(100%)}
     }
 #loaderBar{position:absolute;top:0;left:0;right:0;height:3px;z-index:1001;overflow:hidden}
-#bar{position:absolute;top:0;left:0;width:25%;height:100%;background:red;transform-origin:0 0;animation:IndeterminateLinearProgressIndicator 1.5s infinite;animation-timing-function:cubic-bezier(0.4,0,1,1);animation-delay:.1s}
-
+/*#bar{position:absolute;top:0;left:0;width:25%;height:100%;background:red;transform-origin:0 0;animation:IndeterminateLinearProgressIndicator 1.5s infinite;animation-timing-function:cubic-bezier(0.4,0,1,1);animation-delay:.1s}
+*/
 /* Geral */
-.container{height:100vh}
+.container-search{height:100vh}
 .content{padding: 110px 16px 0 16px;height:100%;}
 
 /* Component  Search */
@@ -43,8 +43,8 @@ html,body{margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe
 .wrapper-comics .thumbnail-text{display:block;opacity:0;-webkit-transform:translateY(0.75em);transform:translateY(0.75em);font-style:italic;color:#fff;letter-spacing:.05em;-webkit-transition:all 750ms ease;transition:all 750ms ease;width:90%;font-size: 0.7em;font-weight:400}
 .wrapper-comics .thumbnail-overlay{height:100%;width:100%;position:relative;display:flex;align-items:center;justify-content:center;position:absolute;top:0;z-index:3}
 .wrapper-comics .thumbnail-overlay:hover{background:rgba(0,0,0,0.7215686274509804)}
-.wrapper-comics .thumbnail-overlay::after,.thumbnail-overlay::before{content:"";border-color:#fff;transition:all 600ms;border-style:solid;border-width:0;height:1.5em;position:absolute;width:1.5em;opacity:0}
-.wrapper-comics .thumbnail-overlay:hover .thumbnail-text{opacity:1;transform:translateY(0em)}
+/*.wrapper-comics .thumbnail-overlay::after,.thumbnail-overlay::before{content:"";border-color:#fff;transition:all 600ms;border-style:solid;border-width:0;height:1.5em;position:absolute;width:1.5em;opacity:0}
+*/.wrapper-comics .thumbnail-overlay:hover .thumbnail-text{opacity:1;transform:translateY(0em)}
 
 @media all and (min-width: 767px) {  
   .wrapper-comics{grid-template-columns: repeat(6, 1fr)}
